@@ -1,6 +1,9 @@
 CMAKE_MINIMUM_REQUIRED( VERSION 2.8)
 project(crs)
 
+#set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+#include(CResourceSystem)
+
 # Let cmake know that this is a release build.
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
@@ -22,6 +25,10 @@ add_executable(crs include/char2hex.h
 	           src/char2hex.c
 		   src/main.c)
 target_include_directories(crs PUBLIC . include)
+
+#CResourceSystemInit(${CMAKE_SOURCE_DIR}/some.data)
+#add_dependencies(crs CRSGeneration)
+
 install(
 	TARGETS crs
 	RUNTIME DESTINATION bin
