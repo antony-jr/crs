@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <crs.h>
 
 static void print_header();
 static void print_usage(const char*);
@@ -8,7 +7,6 @@ int main(int ac, char **av){
 	
 	print_header();
 	if(ac == 1){
-		something();
 		print_usage(av[0]);
 		return 0;
 	}
