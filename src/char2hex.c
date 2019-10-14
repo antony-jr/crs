@@ -13,7 +13,7 @@ char *char2hex(unsigned char c){
 	*buf = (c >> 4) & 0xf;
 	*buf += (*buf < 10) ? '0' : 'A' - 10;
 	buf++;
-	*buf = c & 0xf; /* the least significant byte. */
+	*buf = c & 0xf; /* the least significant nybble. */
 	*buf += (*buf < 10) ? '0' : 'A' - 10;
 	*(++buf) = '\0';
 	return buffer;

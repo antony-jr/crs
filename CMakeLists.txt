@@ -21,8 +21,14 @@ endif()
 # Include Directories.
 include_directories(include)
 
-add_executable(crs include/char2hex.h
-	           src/char2hex.c
+add_executable(crs include/cutelog.h
+	           include/cstr.h
+	           include/cstr_list.h	
+	           include/char2hex.h
+		   src/cutelog.c
+	           src/cstr.c
+		   src/cstr_list.c
+		   src/char2hex.c
 		   src/main.c)
 target_include_directories(crs PUBLIC . include)
 
