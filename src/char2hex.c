@@ -3,7 +3,7 @@
  * This is hard coded but respects the ANSI C 
  * specification which ensures that a char is atleast
  * 1 byte in size.
- * For optimization the loop is unrolled here so it may 
+ * For optimization, the loop is unrolled here so it may 
  * seem big but its actually 4 lines of code.  */
 char *char2hex(unsigned char c){
 	static char buffer[5] = {0};

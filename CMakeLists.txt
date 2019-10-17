@@ -18,6 +18,8 @@ if(GIT_COMMIT_STR)
 	add_definitions(-DGIT_COMMIT_STR="${GIT_COMMIT_STR}")
 endif()
 
+add_definitions(-DJSON_TRACK_SOURCE) # tell json-parser to track the line from json files.
+
 # Include Directories.
 include_directories(include)
 
@@ -25,11 +27,16 @@ add_executable(crs include/cutelog.h
 	           include/cstr.h
 	           include/cstr_list.h	
 	           include/char2hex.h
+		   include/metafile.h
+		   include/json.h
+		   src/metafile.c
+		   src/json.c
 		   src/cutelog.c
 	           src/cstr.c
 		   src/cstr_list.c
 		   src/char2hex.c
 		   src/main.c)
+target_link_libraries(crs PUBLIC m)
 target_include_directories(crs PUBLIC . include)
 
 #CResourceSystemInit(${CMAKE_SOURCE_DIR}/some.data)
