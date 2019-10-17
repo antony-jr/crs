@@ -29,6 +29,8 @@ add_executable(crs include/cutelog.h
 	           include/char2hex.h
 		   include/metafile.h
 		   include/json.h
+		   include/src_packer.h
+		   src/src_packer.c
 		   src/metafile.c
 		   src/json.c
 		   src/cutelog.c

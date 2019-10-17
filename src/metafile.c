@@ -52,8 +52,6 @@ static int parse_json_object(json_value *value , metafile_t obj){
 		}
 		cstr_prepend_ex(buffer, obj->prefix);
 		cstr_list_append(obj->file_paths, buffer, cstr_list_end());
-		cutelog_mode(obj->log, cutelog_multiline_mode);
-		cutelog_success(obj->log, "Added %s", cstr_digest(buffer));
 	}
 	return 0;
 }
