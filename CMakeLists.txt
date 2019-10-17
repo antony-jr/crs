@@ -41,7 +41,7 @@ add_executable(crs include/cutelog.h
 target_link_libraries(crs PUBLIC m)
 target_include_directories(crs PUBLIC . include)
 
-#CResourceSystemInit(${CMAKE_SOURCE_DIR}/some.data)
+#CResourceSystemInit(${CMAKE_SOURCE_DIR} ${PREFIX_PATH})
 #add_dependencies(crs CRSGeneration)
 
 install(

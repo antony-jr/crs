@@ -1,6 +1,6 @@
 include(${CMAKE_ROOT}/Modules/ExternalProject.cmake)
 
-function(CResourceSystemInit fileList prefixPath)
+function(CResourceSystemInit metafilePath prefixPath)
 	include_directories(${CMAKE_CURRENT_BINARY_DIR})
 	ExternalProject_Add(
 		CRSToolchain
@@ -13,7 +13,7 @@ function(CResourceSystemInit fileList prefixPath)
 	add_custom_target(
 		CRSGeneration
 		COMMAND ${CMAKE_CURRENT_BINARY_DIR}/CRSToolchain/src/CRSToolchain-build/crs 
-		ARGS ${fileList} -p ${prefixPath}
+		ARGS ${metafilePath} -p ${prefixPath}
 		WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
 	set(CRSGeneration ${CRSGeneration} PARENT_SCOPE)
 endfunction()
