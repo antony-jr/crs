@@ -252,6 +252,7 @@ int src_packer_run(src_packer_t obj) {
         return -1;
     }
 
+    iter = 0;
     cstr_length(iftag_buffer, &iter);
 
     /* write if tags. */

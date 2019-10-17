@@ -12,8 +12,15 @@ function(CResourceSystemInit metafilePath prefixPath)
 	)
 	add_custom_target(
 		CRSGeneration
+		ALL
+	        DEPENDS	crs.c crs.h
+	)
+        set(CRSGeneration ${CRSGeneration} PARENT_SCOPE)
+	add_custom_command(
+		OUTPUT crs.c crs.h
 		COMMAND ${CMAKE_CURRENT_BINARY_DIR}/CRSToolchain/src/CRSToolchain-build/crs 
 		ARGS ${metafilePath} -p ${prefixPath}
-		WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
-	set(CRSGeneration ${CRSGeneration} PARENT_SCOPE)
+		WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+		DEPENDS CRSToolchain
+	)	
 endfunction()
