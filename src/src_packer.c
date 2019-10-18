@@ -256,7 +256,7 @@ int src_packer_run(src_packer_t obj) {
     cstr_length(iftag_buffer, &iter);
 
     /* write if tags. */
-    if(fwrite(cstr_digest(iftag_buffer),
+    if(iter && fwrite(cstr_digest(iftag_buffer),
               sizeof(char),
               iter - 1, fp) < 0) {
         cutelog_mode(obj->log, cutelog_multiline_mode);
