@@ -204,7 +204,7 @@ int src_packer_run(src_packer_t obj) {
         }
 
         /* add the if tag for this file. */
-        cstr_append(iftag_buffer, "    else if(!strcmp(\"");
+        cstr_append(iftag_buffer, "\n    else if(!strcmp(\"");
         cstr_append(iftag_buffer, cstr_digest(file_name));
         cstr_append(iftag_buffer, "\", filename)){\n");
         cstr_append(iftag_buffer, "        p = file");
